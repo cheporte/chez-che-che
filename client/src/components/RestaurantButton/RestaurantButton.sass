@@ -1,0 +1,42 @@
+.restaurant-button
+    font-family: 'Roboto', sans-serif
+    font-weight: bold
+    cursor: pointer
+    border: none
+    padding: 1rem 2rem
+    border-radius: 5px
+    transition: background-color 0.3s ease, transform 0.3s ease
+
+    &.primary
+        background-color: #ffb8e0
+        color: #fff
+        &:hover
+            background-color: #ec7fa9
+            transform: translateY(-3px)
+
+    &.secondary
+        background-color: #be5985
+        color: #fff
+        &:hover
+            background-color: #ec7fa9
+            transform: translateY(-3px)
+
+    &.ghost
+        background-color: transparent
+        color: #be5985
+        border: 2px solid #be5985
+        &:hover
+            background-color: #ffedfa
+            transform: translateY(-3px)
+
+    &.sm
+        padding: 0.5rem 1rem
+        font-size: 0.9rem
+
+    &.md
+        padding: 1rem 2rem
+        font-size: 1rem
+
+    &.lg
+        padding: 1.2rem 2.5rem
+        font-size: 1.2rem

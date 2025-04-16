@@ -1,0 +1,46 @@
+@use '@styles/variables'
+
+.dish-card
+  background-color: variables.$light-blush
+  border: 1px solid variables.$rose-pink
+  border-radius: 10px
+  overflow: hidden
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)
+  display: flex
+  flex-direction: column
+  transition: transform 0.2s ease
+  cursor: pointer
+
+  &:hover
+    transform: scale(1.02)
+
+.dish-image
+  width: 100%
+  height: 200px
+  object-fit: cover
+
+.dish-info
+  padding: 1rem
+
+.dish-name
+  color: variables.$deep-plum
+  margin: 0
+
+.dish-price
+  color: variables.$rose-pink
+  font-weight: bold
+  margin: 0.5rem 0
+
+.dish-ingredients
+  summary
+    color: variables.$soft-pink
+    cursor: pointer
+    font-weight: 600
+
+  ul
+    margin-top: 0.5rem
+    padding-left: 1.2rem
+
+    li
+      font-size: 0.9rem
+      color: variables.$deep-plum
