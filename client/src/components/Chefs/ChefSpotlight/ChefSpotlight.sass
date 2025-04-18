@@ -6,7 +6,7 @@
   cursor: pointer
 
   .chef-card
-    background-color: variables.$light-blush
+    background-color: white
     padding: 20px
     border-radius: 8px
     text-align: center
@@ -19,6 +19,7 @@
   .chef-image
     width: 100px
     height: 100px
+    border: 2px solid variables.$deep-plum
     border-radius: 50%
     object-fit: cover
 
@@ -28,6 +29,8 @@
       border-radius: 50%
 
   .chef-socials
+    display: flex
+    flex-direction: column
     a
       margin-right: 10px
       color: variables.$deep-plum

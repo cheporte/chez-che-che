@@ -11,7 +11,7 @@ import '@styles/pages/chefs.sass';
 
 const Chefs: React.FC = () => {
     return (
-      <>
+      <div id="chefs">
         <Link to='/chez-che-che'>
           <RestaurantButton variant='ghost' size='md' className='back-btn'>Go Back</RestaurantButton>    
         </Link>
@@ -32,7 +32,7 @@ const Chefs: React.FC = () => {
             </div>
             {/* TODO: Add other sections */}
         </div>
-      </>
+      </div>
     );
 }
 
