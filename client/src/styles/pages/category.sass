@@ -1,30 +1,33 @@
 @use '@styles/variables' as *
     
-.menu-category
-  padding: 3rem 2rem
-  display: flex
-  flex-direction: column
-  align-items: center
-  gap: 2rem
-
-  &__header
-    font-size: 2.5rem
-    font-weight: 600
-    color: $deep-plum
-    border-bottom: 2px solid $rose-pink
-    padding-bottom: 0.5rem
-    text-align: center
-
-  &__menu-actions
+.category-page
+  background-color: $light-blush
+  
+  .menu-category
+    padding: 3rem 2rem
     display: flex
-    gap: 1rem
-    justify-content: center
-    flex-wrap: wrap
-
-  &__dishes
-    display: grid
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+    flex-direction: column
+    align-items: center
     gap: 2rem
-    width: 100%
-    max-width: 1200px
-    margin-top: 2rem
+
+    &__header
+      font-size: 2.5rem
+      font-weight: 600
+      color: $deep-plum
+      border-bottom: 2px solid $rose-pink
+      padding-bottom: 0.5rem
+      text-align: center
+
+    &__menu-actions
+      display: flex
+      gap: 1rem
+      justify-content: center
+      flex-wrap: wrap
+
+    &__dishes
+      display: grid
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+      gap: 2rem
+      width: 100%
+      max-width: 1200px
+      margin-top: 2rem

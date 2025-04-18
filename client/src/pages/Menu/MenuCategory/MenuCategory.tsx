@@ -48,7 +48,7 @@ const MenuCategory: React.FC = () => {
     }, [menuItems]);
 
     return (
-        <>
+        <div className="category-page">
             <Link to='/chez-che-che/menu'>
                 <RestaurantButton className='back-btn' variant='ghost' size='md'>
                     Back to Menu
@@ -78,7 +78,7 @@ const MenuCategory: React.FC = () => {
                     ))}
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 
