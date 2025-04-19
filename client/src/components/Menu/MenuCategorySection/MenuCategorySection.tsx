@@ -18,7 +18,7 @@ const MenuCategorySection: React.FC<MenuCategorySectionProps> = ({ title, dishes
   return (
     <section className="menu-section">
       <h2 className="category-title">{title}</h2>
-      <div className="dish-list">
+      <div className="menu-section__dishes">
         {dishes.map((dish, idx) => (
           <DishCard
             key={idx}
