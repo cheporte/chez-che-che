@@ -11,7 +11,8 @@
       "@components/*": ["components/*"],
       "@styles/*": ["styles/*"],
       "@pages/*": ["pages/*"],
-      "@data/*": ["data/*"]
+      "@data/*": ["data/*"],
+      "@context/*": ["context/*"],
     }
   }
 }
