@@ -9,17 +9,17 @@ type Chef = {
 }
 
 const ChefSelection: React.FC = () => {
-    const [selectedChef, setSelectedChef] = useState<Chef | null>(null);
+    const [selectedChef, setSelectedChef] = useState<Chef>(chefs[0]);
 
     return (
         <section>
             <h2>Choose Your Chef</h2>
             <div className="chef-list">
-                {chefs.map((chef) => (
+                {chefs.map((chef: Chef) => (
                     <div
                         key={chef.name}
-                        className={`chef-card ${selectedChef === chef.name ? 'selected' : ''}`}
-                        onClick={() => setSelectedChef(chef.name)}
+                        className={`chef-card ${selectedChef.name === chef.name ? 'selected' : ''}`}
+                        onClick={() => setSelectedChef(chef)}
                     >
                         <img src={chef.image} alt={chef.name} />
                         <h3>{chef.name}</h3>
