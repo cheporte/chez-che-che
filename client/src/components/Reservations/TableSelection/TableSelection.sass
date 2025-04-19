@@ -1,0 +1,21 @@
+@use '@styles/variables'
+    
+.table-list
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    gap: 1rem
+
+    button
+        background-color: white
+        color: variables.$deep-plum
+        border: 2px solid variables.$deep-plum
+        padding: 1rem 2rem
+        font-size: 1rem
+        border-radius: 10px
+        cursor: pointer
+        transition: background-color 0.3s
+
+        &.selected
+            background-color: variables.$rose-pink
+            color: white

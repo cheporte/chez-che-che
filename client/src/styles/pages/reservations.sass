@@ -1,0 +1,40 @@
+@use '@styles/variables'
+@use '@styles/breakpoints'
+
+
+.back-btn
+    background-color: variables.$light-blush    
+
+#reservations-page
+    padding: 3rem 2rem
+    background-color: variables.$light-blush
+    color: variables.$deep-plum
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    h1
+        text-align: center
+        font-size: 2.5rem
+        margin-bottom: 2rem
+        color: variables.$deep-plum
+
+    section
+        margin-bottom: 3rem
+
+    h2
+        font-size: 1.8rem
+        margin-bottom: 1rem
+        text-align: center
+        text-decoration: underline
+
+    @include breakpoints.breakpoint(sm)
+        .dish-grid,
+        .chef-list,
+        .table-list
+            flex-direction: column
+            align-items: center
+
+        .dish-card,
+        .chef-card
+            width: 90%
