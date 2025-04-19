@@ -1,0 +1,34 @@
+@use '@styles/variables'
+@use '@styles/breakpoints'
+
+#navbar
+  display: flex
+  justify-content: center
+  gap: 2rem
+  padding: 1rem 2rem
+  background-color: variables.$rose-pink
+  border-radius: 2rem
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+  position: sticky
+  top: 0
+  z-index: 10
+
+  a
+    text-decoration: none
+    color: variables.$light-blush
+    font-size: 1.3rem
+    font-weight: 500
+    padding: 0.8rem 1.2rem
+    border-radius: 1rem
+    transition: background-color 0.3s ease, transform 0.2s ease
+
+    &:hover
+      background-color: variables.$deep-plum
+      color: white
+      transform: scale(1.05)
+
+  +breakpoints.breakpoint(sm)
+    flex-direction: column
+    align-items: center
+    gap: 1rem
+    padding: 1rem

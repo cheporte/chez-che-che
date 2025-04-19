@@ -41,8 +41,8 @@ const App: React.FC = () => {
 
         <Route path='/chez-che-che/menu' element={<Menu />} />
         <Route path='/chez-che-che/menu/:category' element={<MenuCategory />} />
-        
-        <Route path='/chez-che-che/about' element={<About />} />
+
+        <Route path='/chez-che-che/about' element={<ProtectedRoute><About /></ProtectedRoute>} />
         <Route path='/chez-che-che/reservations' element={<ProtectedRoute><Reservations /></ProtectedRoute>} />
       </Routes>
     </Router>
