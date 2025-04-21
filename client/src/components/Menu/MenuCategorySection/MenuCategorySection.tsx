@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import DishCard from '@components/Menu/DishCard';
 import './MenuCategorySection.sass';
-import { fetchMenu, Dish } from '@services/api';
+import { fetchMenu } from '@services/api';
 
 type MenuCategorySectionProps = {
   title: string;
 };
 
+type DishType = {
+  name: string;
+  price: string;
+  image: string;
+  ingredients: string[];
+};
+
 const MenuCategorySection: React.FC<MenuCategorySectionProps> = ({ title }) => {
-  const [dishes, setDishes] = useState<Dish[]>([]);
+  const [dishes, setDishes] = useState<DishType[]>([]);
 
   useEffect(() => {
     const loadDishes = async () => {
