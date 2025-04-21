@@ -45,3 +45,7 @@ server/package-lock.json
 
 # Firebase cache
 .firebase/
+
+# secrets
+server/.env
+server/serviceAccount.json
