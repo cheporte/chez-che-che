@@ -1,17 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CommentForm.sass';
 import RestaurantButton from '@components/RestaurantButton';
 import Comment from '@components/Comment';
+
+import { addComment, fetchComments } from '@services/comments';
+
+type CommentType = {
+  name: string;
+  message: string;
+  date: string;
+  rating?: number;
+};
 
 const CommentForm = () => {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
   const [rating, setRating] = useState<number | null>(null);
-  const [comments, setComments] = useState<
-    { name: string; message: string; date: string; rating?: number }[]
-  >([]);
+  const [comments, setComments] = useState<CommentType[]>([]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    const loadComments = async () => {
+      const fetchedComments = await fetchComments();
+      setComments(fetchedComments);
+    };
+
+    loadComments();
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !message.trim() || rating === null) return;
 
@@ -22,6 +38,7 @@ const CommentForm = () => {
       rating,
     };
 
+    await addComment(newComment);
     setComments([newComment, ...comments]);
     setName('');
     setMessage('');
