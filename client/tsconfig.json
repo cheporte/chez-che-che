@@ -13,6 +13,7 @@
       "@pages/*": ["pages/*"],
       "@data/*": ["data/*"],
       "@context/*": ["context/*"],
+      "@services/*": ["services/*"],
     }
   }
 }

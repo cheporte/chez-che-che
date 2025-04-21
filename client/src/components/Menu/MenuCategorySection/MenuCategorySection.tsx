@@ -1,20 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import DishCard from '@components/Menu/DishCard';
 import './MenuCategorySection.sass';
-
-type Dish = {
-  name: string;
-  price: string;
-  imageUrl: string;
-  ingredients: string[];
-};
+import { fetchMenu, Dish } from '@services/api';
 
 type MenuCategorySectionProps = {
   title: string;
-  dishes: Dish[];
 };
 
-const MenuCategorySection: React.FC<MenuCategorySectionProps> = ({ title, dishes }) => {
+const MenuCategorySection: React.FC<MenuCategorySectionProps> = ({ title }) => {
+  const [dishes, setDishes] = useState<Dish[]>([]);
+
+  useEffect(() => {
+    const loadDishes = async () => {
+      try {
+        const category = title.split(' ').at(-1)?.toLowerCase();
+        if (category) {
+          const dishesData = await fetchMenu(category);
+          setDishes(dishesData);
+        }
+      } catch (error) {
+        console.error('Error fetching dishes:', error);
+      }
+    };
+
+    loadDishes();
+  }, [title]);
+
   return (
     <section className="menu-section">
       <h2 className="category-title">{title}</h2>
@@ -24,7 +35,7 @@ const MenuCategorySection: React.FC<MenuCategorySectionProps> = ({ title, dishes
             key={idx}
             name={dish.name}
             price={dish.price}
-            imageUrl={dish.imageUrl}
+            imageUrl={dish.image}
             ingredients={dish.ingredients}
           />
         ))}

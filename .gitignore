@@ -47,5 +47,6 @@ server/package-lock.json
 .firebase/
 
 # secrets
+client/.env
 server/.env
 server/serviceAccount.json

@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '@styles/pages/menu.sass';
 
-import { starters, mains, desserts } from '@data/menuData';
-
 import RestaurantButton from '@components/RestaurantButton';
 import MenuCategorySection from '@components/Menu/MenuCategorySection';
 
@@ -39,9 +37,9 @@ const Menu: React.FC = () => {
         </nav>
       </div>
 
-      <MenuCategorySection title="Glance at Starters" dishes={starters} />
-      <MenuCategorySection title="Glance at Main Courses" dishes={mains} />
-      <MenuCategorySection title="Glance at Desserts" dishes={desserts} />
+      <MenuCategorySection title="Glance at Starters"/>
+      <MenuCategorySection title="Glance at Mains"/>
+      <MenuCategorySection title="Glance at Desserts"/>
     </main>
   );
 };
