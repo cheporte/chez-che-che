@@ -37,9 +37,15 @@ const Menu: React.FC = () => {
         </nav>
       </div>
 
-      <MenuCategorySection title="Glance at Starters"/>
-      <MenuCategorySection title="Glance at Mains"/>
-      <MenuCategorySection title="Glance at Desserts"/>
+      <div className='menu-page__section-preview'>
+        <MenuCategorySection title="Glance at Starters"/>
+      </div>
+      <div className='menu-page__section-preview'>
+        <MenuCategorySection title="Glance at Mains"/>
+      </div>
+      <div className='menu-page__section-preview'>
+        <MenuCategorySection title="Glance at Desserts"/>
+      </div>
     </main>
   );
 };

@@ -19,5 +19,6 @@ export default defineConfig({
       '@context': path.resolve(__dirname, 'src/context'),
       '@services': path.resolve(__dirname, 'src/services')
     }
-  }
+  },
+  envDir: '../'
 })

@@ -1,0 +1,9 @@
+@use '@styles/variables' as *
+
+=respond-to($breakpoint)
+  @if $breakpoint == phone
+    @media (max-width: $breakpoint-phone)
+      @content
+  @else if $breakpoint == tablet
+    @media (max-width: $breakpoint-tablet)
+      @content

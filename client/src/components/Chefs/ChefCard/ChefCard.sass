@@ -60,10 +60,16 @@
   justify-content: center
   z-index: 1000
   padding: 1rem
-  animation: fadeOverlay 0.3s ease-out
+  opacity: 0
+  pointer-events: none
+  transition: opacity 0.3s ease-out
+
+    &.visible
+      opacity: 1
+      pointer-events: auto
 
 .chef-modal
-  background: #ffedfa
+  background: $light-blush
   padding: 2rem
   border-radius: 12px
   width: 100%
@@ -71,32 +77,36 @@
   max-height: 90vh
   overflow-y: auto
   position: relative
-  color: #be5985
+  color: $deep-plum
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15)
-  animation: fadeInZoom 0.3s ease-out
+  transform: scale(0.95)
+  transition: transform 0.3s ease-out
 
-  img
-    width: 100%
-    border-radius: 8px
-    margin-bottom: 1rem
+    &.visible
+    transform: scale(1)
 
-  h2
-    margin-top: 0
-    color: #be5985
+    img
+      width: 100%
+      border-radius: 8px
+      margin-bottom: 1rem
 
-  h3
-    color: #ec7fa9
-    margin-bottom: 1rem
+    h2
+      margin-top: 0
+      color: $deep-plum
 
-  h4
-    margin-top: 1.5rem
-    color: #be5985
+    h3
+      color: $rose-pink
+      margin-bottom: 1rem
 
-  ul
-    padding-left: 1.2rem
-    li
-      font-size: 0.95rem
-      margin-bottom: 0.3rem
+    h4
+      margin-top: 1.5rem
+      color: $deep-plum
+
+    ul
+      padding-left: 1.2rem
+      li
+        font-size: 0.95rem
+        margin-bottom: 0.3rem
 
 .close-button
   position: absolute
@@ -105,5 +115,5 @@
   background: transparent
   border: none
   font-size: 1.5rem
-  color: #be5985
+  color: $deep-plum
   cursor: pointer

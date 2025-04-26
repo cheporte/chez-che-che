@@ -1,46 +1,46 @@
-@use '@styles/variables'
+@use '@styles/variables' as *
+@use '@styles/mixins' as *
 
-.dish-card
-  background-color: white
-  border: 1px solid variables.$rose-pink
-  border-radius: 10px
-  overflow: hidden
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)
+.dishcard
   display: flex
   flex-direction: column
-  transition: transform 0.2s ease
-  cursor: pointer
+  align-items: center
 
-  &:hover
-    transform: scale(1.02)
+  border: 2px solid $deep-plum
+  border-radius: 1.6rem
 
-.dish-image
-  width: 100%
-  height: 200px
-  object-fit: cover
+  padding: 1rem 2rem
 
-.dish-info
-  padding: 1rem
+  background-color: white
 
-.dish-name
-  color: variables.$deep-plum
-  margin: 0
+  width: 350px
 
-.dish-price
-  color: variables.$rose-pink
-  font-weight: bold
-  margin: 0.5rem 0
+  .dish-img
+    width: 300px
+    height: 300px
+    object-fit: cover
 
-.dish-ingredients
-  summary
-    color: variables.$soft-pink
+    border: 2px solid $deep-plum
+    border-radius: 25%
+  
+  &__info
+    display: flex
+    flex-direction: column
+
+  details
+    width: 100%
+    padding: 1rem
+    background-color: $rose-pink
+    color: $light-blush
+    text-align: center
     cursor: pointer
-    font-weight: 600
+    font-weight: bold
 
-  ul
-    margin-top: 0.5rem
-    padding-left: 1.2rem
-
-    li
-      font-size: 0.9rem
-      color: variables.$deep-plum
+    ul
+      background-color: $light-blush
+      color: $deep-plum
+      padding: 1rem
+      border-radius: 0.8rem
+      cursor: default
+      text-align: left
+      list-style: none

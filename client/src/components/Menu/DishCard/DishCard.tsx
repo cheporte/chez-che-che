@@ -10,12 +10,13 @@ type DishCardProps = {
 
 const DishCard: React.FC<DishCardProps> = ({ imageUrl, name, price, ingredients }) => {
   return (
-    <div className="dish-card">
-      <img src={imageUrl} alt={name} className="dish-image" />
-      <div className="dish-info">
-        <h3 className="dish-name">{name}</h3>
-        <p className="dish-price">€{price}</p>
-        <details className="dish-ingredients">
+    <div className="dishcard">
+        <img className="dish-img" src={imageUrl} alt={name} />
+        <div className="dishcard__info">
+          <h3 className="dish-name">{name}</h3>
+          <p className="dish-price">€{price}</p>
+        </div>
+        <details>
           <summary>Ingredients</summary>
           <ul>
             {ingredients.map((item, index) => (
@@ -23,7 +24,6 @@ const DishCard: React.FC<DishCardProps> = ({ imageUrl, name, price, ingredients 
             ))}
           </ul>
         </details>
-      </div>
     </div>
   );
 };

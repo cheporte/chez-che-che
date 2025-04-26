@@ -1,5 +1,5 @@
 @use '@styles/variables'
-@use '@styles/breakpoints'
+@use '@styles/mixins' as *
 
 .auth-page
   min-height: 100vh
@@ -67,7 +67,7 @@
 
 
   // Responsive tweaks
-  +breakpoints.breakpoint(sm)
+  +respond-to(phone)
     padding: 1rem
 
     form

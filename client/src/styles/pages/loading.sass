@@ -1,6 +1,5 @@
-// src/components/LoadingPage.sass
 @use '@styles/variables'
-@use '@styles/breakpoints'
+@use '@styles/mixins' as *
 
 .loading-page
   height: 100vh
@@ -41,7 +40,7 @@
     transform: rotate(360deg)
 
 // —————— breakpoint mixin at top level (or inside .loading-page, but not inside @keyframes) ——————
-+breakpoints.breakpoint(sm)
++respond-to(phone)
   .loading-page
     .loading-spinner
       width: 50px

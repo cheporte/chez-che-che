@@ -1,5 +1,5 @@
 @use '@styles/variables'
-@use '@styles/breakpoints'
+@use '@styles/mixins' as *
 
 
 .back-btn
@@ -28,7 +28,7 @@
         text-align: center
         text-decoration: underline
 
-    @include breakpoints.breakpoint(sm)
+    +respond-to(phone)
         .dish-grid,
         .chef-list,
         .table-list

@@ -1,5 +1,5 @@
 @use '@styles/variables'
-@use '@styles/breakpoints'
+@use '@styles/mixins' as *
 
 #navbar
   display: flex
@@ -27,7 +27,7 @@
       color: white
       transform: scale(1.05)
 
-  +breakpoints.breakpoint(sm)
+  +respond-to(phone)
     flex-direction: column
     align-items: center
     gap: 1rem

@@ -9,7 +9,6 @@ const Navbar: React.FC = () => {
       <Link to='/chez-che-che/menu'>Menu</Link>
       <Link to='/chez-che-che/chefs'>Chefs</Link>
       <Link to='/chez-che-che/about'>About</Link>
-      <Link to='/chez-che-che/profile'>Profile</Link>
     </div>
   );
 }
