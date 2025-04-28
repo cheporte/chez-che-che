@@ -1,8 +1,6 @@
-// src/firebase/firebase.ts
 import { initializeApp } from 'firebase/app';
 import { getAuth, setPersistence, browserLocalPersistence } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
-// import { getStorage } from 'firebase/storage'; // If you need image upload later
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -21,6 +19,5 @@ setPersistence(auth, browserLocalPersistence).catch((err) => {
 })
 
 const db = getFirestore(app);
-// const storage = getStorage(app);
 
 export { app, auth, db};
