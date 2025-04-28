@@ -25,7 +25,7 @@ const MenuPreview: React.FC = () => {
                     <h3>{desserts[0].name}</h3>
                 </div>
             </div>
-            <Link to='/chez-che-che/menu'><RestaurantButton variant="primary" size="lg">Explore More</RestaurantButton></Link>
+            <Link to='/menu'><RestaurantButton variant="primary" size="lg">Explore More</RestaurantButton></Link>
         </section>
     );
 }

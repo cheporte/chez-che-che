@@ -13,7 +13,7 @@ import CommentForm from '@components/About/CommentForm';
 const About: React.FC = () => {
     return (
         <div className='about'>
-            <Link to='/chez-che-che'>
+            <Link to='/'>
                 <RestaurantButton variant='ghost' size='md'>Go Back</RestaurantButton>
             </Link>
             <AboutIntro />

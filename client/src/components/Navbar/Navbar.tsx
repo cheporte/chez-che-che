@@ -6,9 +6,9 @@ import './Navbar.sass';
 const Navbar: React.FC = () => {
   return (
     <div id='navbar'>
-      <Link to='/chez-che-che/menu'>Menu</Link>
-      <Link to='/chez-che-che/chefs'>Chefs</Link>
-      <Link to='/chez-che-che/about'>About</Link>
+      <Link to='/menu'>Menu</Link>
+      <Link to='/chefs'>Chefs</Link>
+      <Link to='/about'>About</Link>
     </div>
   );
 }

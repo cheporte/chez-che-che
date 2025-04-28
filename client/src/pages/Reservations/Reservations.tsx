@@ -15,7 +15,7 @@ const Reservations: React.FC = () => {
     return (
         <>
             <div className="back-btn">
-                <Link to='/chez-che-che'>
+                <Link to='/'>
                     <RestaurantButton variant='ghost' size='lg' onclick={handleSubmit}>Go Back</RestaurantButton>
                 </Link>
             </div>

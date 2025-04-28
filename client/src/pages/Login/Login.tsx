@@ -16,7 +16,7 @@ const Login: React.FC = () => {
     e.preventDefault();
     try {
       await login(email, password);
-      navigate('/chez-che-che'); // Redirect to home on successful login
+      navigate('/'); // Redirect to home on successful login
     } catch (err) {
       setError('Failed to log in. Please check your credentials.');
     }
@@ -43,7 +43,7 @@ const Login: React.FC = () => {
         />
         <button type="submit">Login</button>
       </form>
-      <p>Not a member yet? <Link to='/chez-che-che/register'>Become One!</Link></p>
+      <p>Not a member yet? <Link to='/register'>Become One!</Link></p>
     </div>
   );
 };

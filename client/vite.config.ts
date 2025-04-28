@@ -8,7 +8,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // base: "/chez-che-che",
   resolve: {
     alias: {
       '@assets': path.resolve(__dirname, 'src/assets'),

@@ -8,13 +8,13 @@ const CallToAction: React.FC = () => {
     return (
         <section id="cta">
             <h2>Ready for a Memorable Experience?</h2>
-            <Link to="/chez-che-che/reservations">
+            <Link to="/reservations">
                 <RestaurantButton variant='ghost' size='lg'>
                     Book a Table
                 </RestaurantButton>
             </Link>
             <h2>or</h2>
-            <Link to="/chez-che-che/about">
+            <Link to="/about">
                 <RestaurantButton variant='ghost' size='lg'>
                     Read More
                 </RestaurantButton>

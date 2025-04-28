@@ -8,29 +8,29 @@ import MenuCategorySection from '@components/Menu/MenuCategorySection';
 const Menu: React.FC = () => {
   return (
     <main className="menu-page">
-      <Link to='/chez-che-che'>
+      <Link to='/'>
         <RestaurantButton className='back-btn' variant='ghost' size='md'>Go Back</RestaurantButton>
       </Link>
       <div className='menu-page__categories'>
         <h1>Explore Our Offers</h1>
         <nav className='menu-page__navigation'>
           <div className='menu-page__navigation__option'>
-            <Link to='/chez-che-che/menu/starters'>
+            <Link to='/menu/starters'>
               <RestaurantButton variant='primary' size='lg'>Starters</RestaurantButton>
             </Link>
           </div>
           <div className='menu-page__navigation__option'>
-            <Link to='/chez-che-che/menu/mains'>
+            <Link to='/menu/mains'>
               <RestaurantButton variant='primary' size='lg'>Mains</RestaurantButton>
             </Link>
           </div>
           <div className='menu-page__navigation__option'>
-            <Link to='/chez-che-che/menu/desserts'>
+            <Link to='/menu/desserts'>
               <RestaurantButton variant='primary' size='lg'>Desserts</RestaurantButton>
             </Link>
           </div>
           <div className='menu-page__navigation__option'>
-            <Link to='/chez-che-che/menu/drinks'>
+            <Link to='/menu/drinks'>
               <RestaurantButton variant='primary' size='lg'>Drinks</RestaurantButton>
             </Link>
           </div>

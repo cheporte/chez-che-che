@@ -4,7 +4,7 @@ import './Hero.sass';
 const Hero: React.FC = () => {
     return (
         <section id='hero'>
-            <img className='hero__logo' src='/chez-che-che/logo-pinkish.png' alt="Chez Ché-Ché Logo" />
+            <img className='hero__logo' src='/logo-pinkish.png' alt="Chez Ché-Ché Logo" />
             <h1>Bienvenue to Chez Ché-Ché</h1>
             <h2>Where Every Bite Whispers a Story</h2>
             <p className='hero__welcome'>

@@ -33,17 +33,17 @@ const App: React.FC = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/chez-che-che/login' element={!user ? <Login /> : <Home />} />
-        <Route path='/chez-che-che/register' element={!user ? <Register /> : <Home />} />
+        <Route path='/login' element={!user ? <Login /> : <Home />} />
+        <Route path='/register' element={!user ? <Register /> : <Home />} />
 
-        <Route path='/chez-che-che' element={user ? <Home /> : <Login />} />
-        <Route path='/chez-che-che/chefs' element={<Chefs />} />
+        <Route path='/' element={user ? <Home /> : <Login />} />
+        <Route path='/chefs' element={<Chefs />} />
 
-        <Route path='/chez-che-che/menu' element={<Menu />} />
-        <Route path='/chez-che-che/menu/:category' element={<MenuCategory />} />
+        <Route path='/menu' element={<Menu />} />
+        <Route path='/menu/:category' element={<MenuCategory />} />
 
-        <Route path='/chez-che-che/about' element={<ProtectedRoute><About /></ProtectedRoute>} />
-        <Route path='/chez-che-che/reservations' element={<ProtectedRoute><Reservations /></ProtectedRoute>} />
+        <Route path='/about' element={<ProtectedRoute><About /></ProtectedRoute>} />
+        <Route path='/reservations' element={<ProtectedRoute><Reservations /></ProtectedRoute>} />
       </Routes>
     </Router>
   )

@@ -28,7 +28,7 @@ const ChefsHighlight: React.FC = () => {
                     <p>Sommelier</p>
                 </div>
             </div>
-            <Link to='/chez-che-che/chefs'>
+            <Link to='/chefs'>
                 <RestaurantButton variant="primary" size="lg">Meet the Team</RestaurantButton>
             </Link>
         </section>

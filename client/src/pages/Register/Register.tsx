@@ -16,7 +16,7 @@ const Register: React.FC = () => {
     e.preventDefault();
     try {
       await register(email, password);
-      navigate('/chez-che-che'); // Redirect to home on successful registration
+      navigate('/'); // Redirect to home on successful registration
     } catch (err) {
       setError('Failed to register. Please try again.');
     }
@@ -43,7 +43,7 @@ const Register: React.FC = () => {
         />
         <button type="submit">Register</button>
       </form>
-      <p>Already a member? <Link to='/chez-che-che/login'>Welcome Back!</Link></p>
+      <p>Already a member? <Link to='/login'>Welcome Back!</Link></p>
     </div>
   );
 };

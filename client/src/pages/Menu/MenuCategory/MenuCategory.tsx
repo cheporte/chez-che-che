@@ -49,7 +49,7 @@ const MenuCategory: React.FC = () => {
 
     return (
         <div className="category-page">
-            <Link to='/chez-che-che/menu'>
+            <Link to='/menu'>
                 <RestaurantButton className='back-btn' variant='ghost' size='md'>
                     Back to Menu
                 </RestaurantButton>

@@ -12,7 +12,7 @@ import '@styles/pages/chefs.sass';
 const Chefs: React.FC = () => {
     return (
       <div id="chefs">
-        <Link to='/chez-che-che'>
+        <Link to='/'>
           <RestaurantButton variant='ghost' size='md' className='back-btn'>Go Back</RestaurantButton>    
         </Link>
         <div className="chefs-page">
