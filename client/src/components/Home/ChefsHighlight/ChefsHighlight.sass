@@ -1,4 +1,5 @@
 @use "@styles/variables"
+@use '@styles/mixins' as *
 
 #chefs-highlight
   padding: 40px
@@ -19,6 +20,7 @@
     .chef-card
       text-align: center
       width: 30%
+      margin: 1rem 0
 
       img
         max-width: 70%
@@ -31,5 +33,13 @@
 
       p
         color: variables.$rose-pink
+  
+      +respond-to(tablet)
+        width: 100%
+
+    +respond-to(tablet)
+      align-items: center
+      flex-direction: column
+  
   a
     margin-top: 1.5rem

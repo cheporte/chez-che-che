@@ -1,5 +1,6 @@
 @use '@styles/variables' as *
-    
+@use '@styles/mixins' as *
+
 .category-page
   background-color: $light-blush
   
@@ -26,9 +27,11 @@
 
     &__dishes
       display: flex
-      flex-direction: row
       align-items: center
       flex-wrap: wrap
       gap: 2rem
       width: 100%
       margin-top: 2rem
+    
+      +respond-to(tablet)
+        flex-direction: column

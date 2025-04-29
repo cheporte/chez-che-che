@@ -1,4 +1,5 @@
 @use '@styles/variables'
+@use '@styles/mixins' as *
 
 #menu-preview
     padding: 40px
@@ -6,6 +7,7 @@
     display: flex
     flex-direction: column
     align-items: center
+    text-align: center
 
     h2
         color: variables.$deep-plum
@@ -15,11 +17,23 @@
     .menu-items
         display: flex
         justify-content: space-between
-        margin-top: 2rem
+        margin: 2rem 0
+
+        +respond-to(tablet)
+            align-items: center
+            justify-content: center
+            flex-direction: column
 
         .menu-item
-            width: 30%
+            display: flex
+            justify-content: space-between
             text-align: center
+            align-items: center
+            padding: 1rem
+            margin: 1rem 0.8rem
+            border: 2px solid variables.$deep-plum
+            border-radius: 8px
+            background-color: white
 
             img
                 height: 250px
@@ -30,7 +44,13 @@
             h3
                 font-size: 1.5rem
                 color: variables.$deep-plum
+                padding: 0.8rem
 
             p
                 font-size: 1.2rem
                 color: variables.$rose-pink
+            
+            +respond-to(tablet)
+                align-items: center
+                justify-content: center
+                flex-direction: column
