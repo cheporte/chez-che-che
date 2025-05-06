@@ -4,10 +4,10 @@ import CorinPhoto from '@assets/img/chefs/corin-wickes.jpg';
 
 export const chefs = [
     {
-      name: 'Alexandrina Sebastiane',
+      name: 'Rina Sebastiane',
       bio: 'A passionate chef specializing in Mediterranean and Eastern European cuisine. With a love for local ingredients and rustic flavors, Alexandrina has won several culinary awards.',
       image: AlexandrinaPhoto,
-      specialties: ['Mediterranean', 'Eastern European', 'Seafood'],
+      specialties: ['Mediterranean', 'Eastern European'],
       socialLinks: ['https://www.instagram.com/alexandrina_rina', 'https://www.linkedin.com/in/alexandrina']
     },
     {
@@ -25,4 +25,3 @@ export const chefs = [
       socialLinks: ['https://www.instagram.com/corinwickes', 'https://www.linkedin.com/in/corinwickes']
     }
 ];
-  

@@ -16,6 +16,9 @@
     &:hover
       transform: scale(1.05)
 
+  .chef-details
+    max-width: 500px
+
   .chef-image
     width: 100px
     height: 100px
@@ -30,12 +33,13 @@
 
   .chef-socials
     display: flex
-    flex-direction: column
+    justify-content: center
     a
-      margin-right: 10px
+      margin: 0 10px
       color: variables.$deep-plum
       text-decoration: none
       transition: color 0.2s
+      font-size: 2rem
 
     a:hover
       color: variables.$rose-pink

@@ -41,7 +41,9 @@ const ChefSpotlight: React.FC<ChefSpotlightProps> = ({ chefData }) => {
                         <p><strong>Specialties:</strong> {chefData.specialties.join(', ')}</p>
                         <div className="chef-socials">
                             {chefData.socialLinks.map((link, index) => (
-                                <a key={index} href={link} target="_blank" rel="noopener noreferrer">{link}</a>
+                                <a key={index} href={link} target="_blank" rel="noopener noreferrer">
+                                  {link.match("instagram") ? <FontAwesomeIcon icon={['fab', 'instagram']} /> : <FontAwesomeIcon icon={['fab', 'linkedin']} />}
+                                </a>
                             ))}
                         </div>
                     </div>
