@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './CommentForm.sass';
 import RestaurantButton from '@components/RestaurantButton';
 import Comment from '@components/Comment';
@@ -13,6 +13,8 @@ type CommentType = {
 };
 
 const CommentForm = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
   const [rating, setRating] = useState<number | null>(null);
@@ -27,6 +29,13 @@ const CommentForm = () => {
     loadComments();
   }, []);
 
+  const resetForm = () => {
+    setName('');
+    setMessage('');
+    setRating(null);
+    formRef.current?.reset();
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !message.trim() || rating === null) return;
@@ -40,16 +49,16 @@ const CommentForm = () => {
 
     await addComment(newComment);
     setComments([newComment, ...comments]);
-    setName('');
-    setMessage('');
-    setRating(null);
+
+    resetForm();
   };
 
   return (
     <section className="comment-section">
       <h2>Leave Us a Comment</h2>
-      <form onSubmit={handleSubmit}>
+      <form ref={formRef} onSubmit={handleSubmit}>
         <input
+          id='nameform'
           type="text"
           placeholder="Your Name"
           value={name}

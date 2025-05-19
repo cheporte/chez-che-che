@@ -15,7 +15,7 @@ const Comment: React.FC<CommentProps> = ({ name, text, rating }) => {
         <strong>{name}</strong>
         {rating !== undefined && (
           <div className="comment-rating">
-            {'★'.repeat(rating)}{'☆'.repeat(5 - rating)}
+            {'★'.repeat(rating)}
           </div>
         )}
       </div>
