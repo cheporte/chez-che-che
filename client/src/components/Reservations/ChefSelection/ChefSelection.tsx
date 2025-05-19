@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { chefs } from "@data/chefData";
 import './ChefSelection.sass';
@@ -8,9 +8,14 @@ type Chef = {
     image: string
 }
 
-const ChefSelection: React.FC = () => {
-    const [selectedChef, setSelectedChef] = useState<Chef>(chefs[0]);
+type ChefSelectionProps = {
+  selectedChef: string;
+  setSelectedChef: React.Dispatch<React.SetStateAction<string>>;
+};
 
+const ChefSelection: React.FC<ChefSelectionProps> = ({
+  selectedChef, setSelectedChef
+}) => {
     return (
         <section>
             <h2>Choose Your Chef</h2>
@@ -18,8 +23,8 @@ const ChefSelection: React.FC = () => {
                 {chefs.map((chef: Chef) => (
                     <div
                         key={chef.name}
-                        className={`chef-card ${selectedChef.name === chef.name ? 'selected' : ''}`}
-                        onClick={() => setSelectedChef(chef)}
+                        className={`chef-card ${selectedChef === chef.name ? 'selected' : ''}`}
+                        onClick={() => setSelectedChef(chef.name)}
                     >
                         <img src={chef.image} alt={chef.name} />
                         <h3>{chef.name}</h3>

@@ -3,7 +3,7 @@
 
 
 .back-btn
-    background-color: variables.$light-blush    
+    background-color: variables.$light-blush
 
 #reservations-page
     padding: 3rem 2rem
@@ -38,3 +38,31 @@
         .dish-card,
         .chef-card
             width: 90%
+
+.reservation-success-modal
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  background: rgba(0, 0, 0, 0.6)
+  display: flex
+  align-items: center
+  justify-content: center
+  z-index: 1000
+
+  .modal-content
+    background: white
+    padding: 2rem
+    border-radius: 1rem
+    text-align: center
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1)
+    animation: pop 0.3s ease-in-out
+
+@keyframes pop
+  0%
+    transform: scale(0.8)
+    opacity: 0
+  100%
+    transform: scale(1)
+    opacity: 1

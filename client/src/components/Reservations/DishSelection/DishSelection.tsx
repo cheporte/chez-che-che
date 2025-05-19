@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { starters, mains, desserts, drinks } from "@data/menuData";
 import "./DishSelection.sass";
 
-const DishSelection: React.FC = () => {
-    const [selectedDishes, setSelectedDishes] = useState<string[]>([]);
+type DishSelectionProps = {
+  selectedDishes: string[];
+  setSelectedDishes: React.Dispatch<React.SetStateAction<string[]>>;
+};
 
+const DishSelection: React.FC<DishSelectionProps> = ({
+  selectedDishes, setSelectedDishes
+}) => {
     const toggleDish = (name: string) => {
         setSelectedDishes((prev) =>
             prev.includes(name) ? prev.filter((d) => d !== name) : [...prev, name]

@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import './TableSelection.sass';
 
-const TableSelection: React.FC = () => {
-    const [selectedTable, setSelectedTable] = useState<number | null>(null);
+type TableSelectionProps = {
+  selectedTable: number;
+  setSelectedTable: React.Dispatch<React.SetStateAction<number>>;
+};
 
+const TableSelection: React.FC<TableSelectionProps> = ({
+  selectedTable, setSelectedTable
+}) => {
     const tables = [1, 2, 3, 4, 5]; // Can be dynamic later
 
     return (
