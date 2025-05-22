@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { User } from "firebase/auth";
-import { observeUser, loginUser, registerUser, logoutUser } from "../firebase/authService";
+import { observeUser, loginUser, registerUser, logoutUser, continueWithGoogle } from "../firebase/authService";
 
 type AuthContextType = {
     user: User | null;
@@ -8,6 +8,7 @@ type AuthContextType = {
     login: (email: string, password: string) => Promise<void>;
     register: (email: string, password: string) => Promise<void>;
     logout: () => Promise<void>;
+    loginWithGoogle: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -42,9 +43,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const logout = async () => {
       await logoutUser();
     };
+
+    const loginWithGoogle = async () => {
+      await continueWithGoogle();
+    }
   
     return (
-      <AuthContext.Provider value={{ user, loading, login, register, logout }}>
+      <AuthContext.Provider value={{ user, loading, login, register, logout, loginWithGoogle }}>
         {children}
       </AuthContext.Provider>
     );

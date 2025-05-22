@@ -5,7 +5,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import '@styles/pages/authpage.sass';
 
 const Login: React.FC = () => {
-  const { login } = useAuth();
+  const { login, loginWithGoogle } = useAuth();
   const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
@@ -19,6 +19,15 @@ const Login: React.FC = () => {
       navigate('/'); // Redirect to home on successful login
     } catch (err) {
       setError('Failed to log in. Please check your credentials.');
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    try {
+      await loginWithGoogle();
+      navigate('/');
+    } catch (err) {
+      setError('Google login failed. Maybe try again?');
     }
   };
 
@@ -42,6 +51,10 @@ const Login: React.FC = () => {
           required
         />
         <button type="submit">Login</button>
+
+        <button className="google-login" onClick={handleGoogleLogin}>
+          Sign in with Google 🌈
+        </button>
       </form>
       <p>Not a member yet? <Link to='/register'>Become One!</Link></p>
     </div>

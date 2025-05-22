@@ -15,5 +15,12 @@
   "explore_menu_btn": "Explorez Plus",
   "meet_chefs_btn": "Rencontrez l'équipe",
   "cta_book_table_btn": "Réservez une Table",
-  "cta_read_more_btn": "Lirez la Suite"
+  "cta_read_more_btn": "Lirez la Suite",
+
+  "about_title": "À propos de Chez Ché-Ché",
+  "about_description": "Chez Ché-Ché, nous croyons que la cuisine est bien plus qu’un repas — c’est un moment. Notre restaurant célèbre la cuisine française raffinée avec une touche de légèreté, offrant des plats qui nourrissent à la fois le corps et l’âme. Que ce soit votre première visite ou votre cinquantième, nous vous invitons à savourer un espace où chaque bouchée raconte une histoire.",
+  "about_contact_us": "Contactez-nous",
+  "about_find_us": "Trouvez-nous ici",
+  "about_leave_comment": "Laissez-nous un commentaire",
+  "about_submit_comment_btn": "Envoyer"
 }

@@ -4,6 +4,7 @@ import RestaurantButton from '@components/RestaurantButton';
 import Comment from '@components/Comment';
 
 import { addComment, fetchComments } from '@services/comments';
+import { useTranslation } from 'react-i18next';
 
 type CommentType = {
   name: string;
@@ -13,6 +14,7 @@ type CommentType = {
 };
 
 const CommentForm = () => {
+  const { t } = useTranslation();
   const formRef = useRef<HTMLFormElement>(null);
 
   const [name, setName] = useState('');
@@ -55,7 +57,7 @@ const CommentForm = () => {
 
   return (
     <section className="comment-section">
-      <h2>Leave Us a Comment</h2>
+      <h2>{t("about_leave_comment")}</h2>
       <form ref={formRef} onSubmit={handleSubmit}>
         <input
           id='nameform'
@@ -83,7 +85,7 @@ const CommentForm = () => {
           ))}
         </div>
 
-        <RestaurantButton type="submit">Submit</RestaurantButton>
+        <RestaurantButton type="submit">{t("about_submit_comment_btn")}</RestaurantButton>
       </form>
 
       <ul className="comment-list">
