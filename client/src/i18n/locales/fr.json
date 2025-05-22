@@ -1,8 +1,19 @@
 {
-  "welcome": "Bienvenue dans notre restaurant !",
-  "submit": "Soumettre",
-  "name_placeholder": "Votre nom",
-  "comment_placeholder": "Votre commentaire",
-  "rating_label": "Notez-nous",
-  "leave_comment": "Laissez-nous un commentaire"
+  "navbar_menu": "Menu",
+  "navbar_chefs": "Chefs",
+  "navbar_about": "Sur Nous",
+
+  "hero_title": "Bienvenue chez Ché-Ché",
+  "hero_subtitle": "Où Chaque Bouchée Murmure une Histoire",
+  "hero_main_text": "Entrez dans un monde de saveurs raffinées et de charme intime. Chez Ché-Ché, nous mêlons traditions culinaires intemporelles et une touche de fantaisie en élaborant des plats qui nourrissent le corps et l’âme. Que vous nous rejoigniez pour une soirée romantique, un rassemblement joyeux ou un moment de détente tranquille, vous êtes toujours chez vous. Laissez vos sens vagabonder. Laissez votre cœur dîner.",
+  "menu_preview_title": "Découvrez Notre Carte",
+  "chef_preview_title": "Rencontrez Nos Chefs",
+  "testimonial": "Un voyage culinaire qui touche l’âme. Chaque bouchée est une histoire.",
+  "testimonial_author": "Client Heureux",
+  "cta_title": "Prêt Pour une Expérience Mémorable?",
+  "cta_or": "ou",
+  "explore_menu_btn": "Explorez Plus",
+  "meet_chefs_btn": "Rencontrez l'équipe",
+  "cta_book_table_btn": "Réservez une Table",
+  "cta_read_more_btn": "Lirez la Suite"
 }

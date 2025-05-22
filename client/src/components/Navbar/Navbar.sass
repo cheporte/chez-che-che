@@ -3,7 +3,7 @@
 
 #navbar
   display: flex
-  justify-content: center
+  justify-content: space-between
   gap: 2rem
   padding: 1rem 2rem
   background-color: variables.$rose-pink
@@ -12,20 +12,35 @@
   position: sticky
   top: 0
   z-index: 10
+  align-items: center
 
-  a
-    text-decoration: none
-    color: variables.$light-blush
-    font-size: 1.3rem
-    font-weight: 500
-    padding: 0.8rem 1.2rem
-    border-radius: 1rem
-    transition: background-color 0.3s ease, transform 0.2s ease
+  .nav-links
+    display: flex
+    gap: 1rem
 
-    &:hover
+    a
+        text-decoration: none
+        color: variables.$light-blush
+        font-size: 1.3rem
+        font-weight: 500
+        padding: 0.8rem 1.2rem
+        border-radius: 1rem
+        transition: background-color 0.3s ease, transform 0.2s ease
+
+        &:hover
+            background-color: variables.$deep-plum
+            color: white
+            transform: scale(1.05)
+
+  .right-side
+    display: flex
+    align-items: center
+
+    .user-profile
+      padding: 8px
+      margin-left: 1rem
       background-color: variables.$deep-plum
-      color: white
-      transform: scale(1.05)
+      border-radius: 50%
 
   +respond-to(phone)
     flex-direction: column

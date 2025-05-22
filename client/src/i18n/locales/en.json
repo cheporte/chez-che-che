@@ -1,8 +1,19 @@
 {
-  "welcome": "Welcome to our restaurant!",
-  "submit": "Submit",
-  "name_placeholder": "Your Name",
-  "comment_placeholder": "Your Comment",
-  "rating_label": "Rate us",
-  "leave_comment": "Leave Us a Comment"
+  "navbar_menu": "Menu",
+  "navbar_chefs": "Chefs",
+  "navbar_about": "About Us",
+
+  "hero_title": "Welcome to Ché-Ché",
+  "hero_subtitle": "Where Every Bite Whispers a Story",
+  "hero_main_text": "Step into a world of refined flavors and intimate charm. At Chez Ché-Ché, we blend timeless culinary traditions with a touch of whimsy, crafting dishes that nourish both body and soul. Whether you're joining us for a romantic evening, a joyful gathering, or a quiet moment of indulgence — you're always home here. Let your senses wander. Let your heart dine.",
+  "menu_preview_title": "Explore Our Menu",
+  "chef_preview_title": "Meet Our Chefs",
+  "testimonial": "A culinary journey that touches the soul. Every bite is a story.",
+  "testimonial_author": "Happy Customer",
+  "cta_title": "Ready for a Memorable Experience?",
+  "cta_or": "or",
+  "explore_more_btn": "Explore More",
+  "meet_chefs_btn": "Meet the Team",
+  "cta_book_table_btn": "Book a Table",
+  "cta_read_more_btn": "Read More"
 }

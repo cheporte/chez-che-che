@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
+import '@styles/global.sass'
 import { AuthProvider } from './context/AuthContext.tsx';
 
 import "./i18n/i18n.ts";

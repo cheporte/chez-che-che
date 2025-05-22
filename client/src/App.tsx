@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { useAuth } from '@context/AuthContext';
 
+// import Profile from "@pages/Profile";
+
 import Home from '@pages/Home';
 import Chefs from '@pages/Chefs';
 
@@ -14,7 +16,7 @@ import Reservations from '@pages/Reservations';
 import Login from '@pages/Login';
 import Register from '@pages/Register';
 import LoadingPage from '@pages/LoadingPage';
-import ProtectedRoute from '@components/ProtectedRoure';
+import ProtectedRoute from '@components/ProtectedRoute';
 
 const App: React.FC = () => {
   const { user, loading } = useAuth();
@@ -44,6 +46,7 @@ const App: React.FC = () => {
 
         <Route path='/about' element={<ProtectedRoute><About /></ProtectedRoute>} />
         <Route path='/reservations' element={<ProtectedRoute><Reservations /></ProtectedRoute>} />
+        {/* <Route path='/profile' element={<ProtectedRoute><Profile /></ProtectedRoute>} /> */}
       </Routes>
     </Router>
   )
