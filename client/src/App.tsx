@@ -16,6 +16,8 @@ import Reservations from '@pages/Reservations';
 import Login from '@pages/Login';
 import Register from '@pages/Register';
 import LoadingPage from '@pages/LoadingPage';
+import ResetPassword from '@pages/ResetPassword';
+
 import ProtectedRoute from '@components/ProtectedRoute';
 
 const App: React.FC = () => {
@@ -37,6 +39,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path='/login' element={!user ? <Login /> : <Home />} />
         <Route path='/register' element={!user ? <Register /> : <Home />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
 
         <Route path='/' element={user ? <Home /> : <Login />} />
         <Route path='/chefs' element={<Chefs />} />

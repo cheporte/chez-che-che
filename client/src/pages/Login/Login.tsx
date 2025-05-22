@@ -33,30 +33,33 @@ const Login: React.FC = () => {
 
   return (
     <div className="auth-page">
-      <h2>Login</h2>
-      {error && <p className="error">{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Login</button>
+      <div className="auth-page__container">
+        <h2>Login</h2>
+        {error && <p className="error">{error}</p>}
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <button type="submit">Login</button>
 
-        <button className="google-login" onClick={handleGoogleLogin}>
-          Sign in with Google 🌈
-        </button>
-      </form>
-      <p>Not a member yet? <Link to='/register'>Become One!</Link></p>
+          <button className="google-login" onClick={handleGoogleLogin}>
+            Sign in with Google 🌈
+          </button>
+        </form>
+        <p>Not a member yet? <Link to='/register'>Become One!</Link></p>
+        <p><Link to="/reset-password">Forgot password?</Link></p>
+      </div>
     </div>
   );
 };
