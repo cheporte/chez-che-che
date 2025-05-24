@@ -2,6 +2,8 @@
   "navbar_menu": "Menu",
   "navbar_chefs": "Chefs",
   "navbar_about": "Sur Nous",
+  "navbar_profile": "Profil",
+  "navbar_logout": "Déconnecter",
 
   "hero_title": "Bienvenue chez Ché-Ché",
   "hero_subtitle": "Où Chaque Bouchée Murmure une Histoire",

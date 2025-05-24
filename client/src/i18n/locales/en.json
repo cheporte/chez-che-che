@@ -2,6 +2,8 @@
   "navbar_menu": "Menu",
   "navbar_chefs": "Chefs",
   "navbar_about": "About Us",
+  "navbar_profile": "Profile",
+  "navbar_logout": "Logout",
 
   "hero_title": "Welcome to Ché-Ché",
   "hero_subtitle": "Where Every Bite Whispers a Story",
@@ -12,7 +14,7 @@
   "testimonial_author": "Happy Customer",
   "cta_title": "Ready for a Memorable Experience?",
   "cta_or": "or",
-  "explore_more_btn": "Explore More",
+  "explore_menu_btn": "Explore More",
   "meet_chefs_btn": "Meet the Team",
   "cta_book_table_btn": "Book a Table",
   "cta_read_more_btn": "Read More",

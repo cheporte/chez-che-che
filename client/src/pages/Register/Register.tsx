@@ -8,6 +8,7 @@ const Register: React.FC = () => {
   const { register } = useAuth();
   const navigate = useNavigate();
 
+  const [displayName, setDisplayName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -18,6 +19,7 @@ const Register: React.FC = () => {
       await register(email, password);
       navigate('/'); // Redirect to home on successful registration
     } catch (err) {
+      console.error(err);
       setError('Failed to register. Please try again.');
     }
   };
@@ -28,6 +30,13 @@ const Register: React.FC = () => {
         <h2>Register</h2>
         {error && <p className="error">{error}</p>}
         <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Display name"
+            value={displayName}
+            onChange={(e) => setDisplayName(e.target.value)}
+            required
+          />
           <input
             type="email"
             placeholder="Email"

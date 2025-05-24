@@ -9,9 +9,12 @@ import {
     sendPasswordResetEmail
 } from 'firebase/auth';
 import { auth } from './firebase';
+import { createUserProfile } from '@services/createUser';
 
-export const registerUser = (email: string, password: string) => {
-    return createUserWithEmailAndPassword(auth, email, password);
+export const registerUser = async (email: string, password: string) => {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+    return createUserProfile(user);
 };
 
 export const loginUser = (email: string, password: string) => {

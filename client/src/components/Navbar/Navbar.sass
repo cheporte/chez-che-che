@@ -37,10 +37,40 @@
     align-items: center
 
     .user-profile
-      padding: 8px
-      margin-left: 1rem
-      background-color: variables.$deep-plum
-      border-radius: 50%
+        position: relative
+        cursor: pointer
+        background-color: variables.$deep-plum
+        border-radius: 50%
+        padding: 0.8rem
+        margin-left: 1rem
+
+        .dropdown-menu
+            position: absolute
+            top: 110%
+            right: 0
+            background-color: white
+            border-radius: 0.6rem
+            box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.1)
+            display: flex
+            flex-direction: column
+            padding: 0.5rem 0
+            z-index: 100
+
+            button
+                padding: 0.8rem 1.2rem
+                text-align: left
+                font-size: 1rem
+                border: none
+                background: none
+                color: variables.$deep-plum
+                text-decoration: none
+                font-family: inherit
+                width: 100%
+                transition: background-color 0.3s ease
+
+                &:hover
+                    background-color: variables.$light-blush
+
 
   +respond-to(phone)
     flex-direction: column
