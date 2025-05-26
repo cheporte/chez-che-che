@@ -3,19 +3,21 @@ import { useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
 import { Link } from "react-router-dom";
-
 import RestaurantButton from "@components/RestaurantButton";
-
 import TestPFP from "@assets/cherry-logo.png";
-
 import LoadingPage from "@pages/LoadingPage";
-
 import "@styles/pages/profile.sass";
+
+function formatDate(ms: number) {
+  return new Date(ms).toLocaleDateString("en-US", {
+    year: "numeric", month: "long", day: "numeric"
+  });
+}
 
 type VisitorProfile = {
   uid: string;
   email: string;
-  createdAt: any; // Firestore Timestamp
+  createdAt: number | { seconds: number; nanoseconds: number }; // Firestore Timestamp
   displayName: string;
   photoURL?: string;
   role?: string;
@@ -43,7 +45,15 @@ const Profile: React.FC<VisitorProfile> = () => {
         const snapshot = await getDoc(docRef);
 
         if (snapshot.exists()) {
-          setProfile(snapshot.data() as VisitorProfile);
+          const data = snapshot.data() as VisitorProfile;
+
+          const rawTimestamp = data.createdAt;
+          if (typeof rawTimestamp === 'object' && 'seconds' in rawTimestamp) {
+            // It's a Firestore Timestamp object
+            data.createdAt = rawTimestamp.seconds * 1000; // convert to ms for JS Date
+          }
+          console.log(data);
+          setProfile(data);
         }
       } catch (err) {
         console.error("Error fetching profile: ", err);
@@ -61,7 +71,6 @@ const Profile: React.FC<VisitorProfile> = () => {
   const {
     displayName,
     email,
-    photoURL,
     createdAt,
     bio,
     favoriteCuisine,
@@ -74,14 +83,16 @@ const Profile: React.FC<VisitorProfile> = () => {
   return (
     <div className="profile-page">
       <div className="profile-page__container">
-        <img
-          src={TestPFP}
-          alt="avatar"
-          className="avatar"
-        />
-        <h1>{displayName || "Mystery Diner"}</h1>
-        {isVIP && <span className="badge">🌟 VIP Member</span>}
-        <p className="bio">{bio || "This visitor hasn’t shared their story yet..."}</p>
+        <div className="profile-page__container__user-main-info">
+          <img
+            src={TestPFP}
+            alt="avatar"
+            className="avatar"
+          />
+          <h1>{displayName || "Mystery Diner"}</h1>
+          {isVIP && <span className="badge">🌟 VIP Member</span>}
+          <p className="bio">{bio || "This visitor hasn’t shared their story yet..."}</p>
+        </div>
 
         <div className="info">
           <div>
@@ -106,15 +117,19 @@ const Profile: React.FC<VisitorProfile> = () => {
           </div>
           <div>
             <h4>🕰️ Joined</h4>
-            <p>{createdAt?.toDate?.().toLocaleDateString() || "???"}</p>
+            <p>{createdAt ? formatDate(createdAt as number) : "???"}</p>
           </div>
         </div>
-        <Link to={`/profile/${id}/update`}>
-          <RestaurantButton variant='primary' size='md'>Update Profile</RestaurantButton>
-        </Link>
-        <Link to="/">
-          <RestaurantButton variant='primary' size='md'>Back to Main</RestaurantButton>
-        </Link>
+
+        <div className="navigation">
+          <Link to={`/profile/${id}/update`}>
+            <RestaurantButton className="navbtn" variant='primary' size='md'>Update Profile</RestaurantButton>
+          </Link>
+          <Link to="/">
+            <RestaurantButton className="navbtn" variant='primary' size='md'>Back to Main</RestaurantButton>
+          </Link>
+        </div>
+
       </div>
     </div>
   );
