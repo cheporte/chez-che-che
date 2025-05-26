@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { useAuth } from '@context/AuthContext';
 
 import Profile from "@pages/Profile";
+import UpdateProfile from "@pages/Profile/UpdateProfile";
 
 import Home from '@pages/Home';
 import Chefs from '@pages/Chefs';
@@ -49,7 +50,9 @@ const App: React.FC = () => {
 
         <Route path='/about' element={<ProtectedRoute><About /></ProtectedRoute>} />
         <Route path='/reservations' element={<ProtectedRoute><Reservations /></ProtectedRoute>} />
+
         <Route path='/profile/:id' element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+        <Route path='/profile/:id/update' element={<ProtectedRoute><UpdateProfile /></ProtectedRoute>} />
       </Routes>
     </Router>
   )

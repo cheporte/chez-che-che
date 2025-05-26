@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 import RestaurantButton from "@components/RestaurantButton";
 
+import TestPFP from "@assets/cherry-logo.png";
 
 import LoadingPage from "@pages/LoadingPage";
 
@@ -74,7 +75,7 @@ const Profile: React.FC<VisitorProfile> = () => {
     <div className="profile-page">
       <div className="profile-page__container">
         <img
-          src={photoURL || "/default-avatar.png"}
+          src={TestPFP}
           alt="avatar"
           className="avatar"
         />
@@ -108,8 +109,11 @@ const Profile: React.FC<VisitorProfile> = () => {
             <p>{createdAt?.toDate?.().toLocaleDateString() || "???"}</p>
           </div>
         </div>
+        <Link to={`/profile/${id}/update`}>
+          <RestaurantButton variant='primary' size='md'>Update Profile</RestaurantButton>
+        </Link>
         <Link to="/">
-          <RestaurantButton variant='primary' size='lg'>Back to Main</RestaurantButton>
+          <RestaurantButton variant='primary' size='md'>Back to Main</RestaurantButton>
         </Link>
       </div>
     </div>
